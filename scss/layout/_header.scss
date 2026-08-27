@@ -1,6 +1,6 @@
-.header {
-  
+@use '../utils/variables' as v;
 
+.header {
   &__inner {
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
   &__brand {
     margin-left: 70px;
 
-    @media (max-width: 800px) {
+    @media (max-width: v.$bp800) {
       margin-left: 20px;
     }
   }

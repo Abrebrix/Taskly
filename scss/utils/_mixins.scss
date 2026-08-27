@@ -1,0 +1,11 @@
+@use 'variables' as v;
+
+@mixin title-base {
+    font-weight: 800;
+    text-align: center;
+}
+
+@mixin subtitle-base {
+    color: v.$gray;
+    text-align: center;
+}

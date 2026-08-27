@@ -1,4 +1,4 @@
-@use '../utils' as v;
+@use '../utils/variables' as v;
 
 .auth-form {
   display: flex;
@@ -22,7 +22,7 @@
     border: 1px solid v.$black;
     border-radius: 10px;
     width: 300px;
-    height: 30px;
+    height: 35px;
     padding: 0 10px;
   }
 
@@ -37,10 +37,25 @@
     border-radius: 15px;
     width: 200px;
     height: 40px;
+    transition: .25s;
+
+    &:hover {
+      color: v.$black;
+      background-color: v.$white;
+      border: 1px solid v.$black;
+    }
   }
 
   &__text {
     font-size: 12px;
     font-weight: 500;
+  }
+
+  &__link {
+    transition: color .25s;
+
+    &:hover {
+      color: v.$gray;
+    }
   }
 }
