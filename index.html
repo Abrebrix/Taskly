@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taskly</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-  
+  <div class="page-auth">
+    <header class="header page-auth__header">
+      <div class="header__inner">
+        <a href="index.html" class="brand header__brand">
+          <span class="brand__name">Taskly</span>
+          <img src="img/logo.svg" alt="" class="brand__logo">
+        </a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="welcome">
+        <div class="container">
+          <div class="welcome__inner">
+
+            <h1 class="welcome__title">Taskly</h1>
+            <p class="welcome__subtitle">Пространство для заметок и идей</p>
+
+            <div class="auth-options">
+              <a href="registration.html" class="auth-options__card auth-options__card--reg">
+                <h2 class="auth-options__title">Продолжить с регистрацией</h2>
+
+                <ul class="auth-options__list">
+                  <li class="auth-options__item">• Почта</li>
+                  <li class="auth-options__item">• Пароль</li>
+                </ul>
+              </a>
+
+              <a href="#" class="auth-options__card auth-options__card--guest">
+                <h2 class="auth-options__title">Без регистрации</h2>
+
+                <p class="auth-options__text">Ты можешь потреять свои заметки</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
+
 </html>

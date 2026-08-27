@@ -1,12 +1,21 @@
-//base
+// utils (variables/mixins, CSS не генерирует)
+@use './utils';
+
+// base
 @use './base/reset';
 @use './base/typography';
+@use './base/body';
 
-//components
-
-
-//layout
+// layout
 @use './layout/container';
+@use './layout/header';
+@use './layout/page-auth';
 
+// components
+@use './components/brand';
+@use './components/auth-options';
+@use './components/auth-form';
 
-//page
+// pages
+@use './pages/welcome';
+@use './pages/registration';

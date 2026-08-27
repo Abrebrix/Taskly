@@ -1,0 +1,78 @@
+@use '../utils' as v;
+
+.auth-options {
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: v.$bp500) {
+    gap: 5px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    height: 192px;
+    padding: 0 20px;
+
+    border: 1px solid v.$black;
+    border-radius: v.$br30;
+    text-align: left;
+    color: v.$black;
+    transition: .3s;
+
+    &:hover {
+      background-color: v.$black;
+      color: v.$white;
+      max-width: 300px;
+    }
+
+    @media (max-width: v.$bp400) {
+      padding: 0 15px;
+    }
+
+    &--reg {
+      max-width: 350px;
+      gap: 56px;
+    }
+
+    &--guest {
+      max-width: 185px;
+      gap: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 20px;
+
+    @media (max-width: v.$bp400) {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+
+    font-weight: 400;
+    font-size: 15px;
+
+    @media (max-width: v.$bp400) {
+      font-size: 13px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 15px;
+
+    @media (max-width: v.$bp400) {
+      font-size: 13px;
+    }
+  }
+}

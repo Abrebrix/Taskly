@@ -1,0 +1,30 @@
+@use '../utils' as v;
+
+.welcome {
+  text-align: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 64px;
+  }
+
+  &__subtitle {
+    margin-bottom: 90px;
+    font-weight: 300;
+    font-size: 32px;
+    color: v.$gray;
+
+    @media (max-width: v.$bp400) {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+}

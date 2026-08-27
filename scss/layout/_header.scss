@@ -1,0 +1,17 @@
+.header {
+  
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-block: 25px;
+  }
+
+  &__brand {
+    margin-left: 70px;
+
+    @media (max-width: 800px) {
+      margin-left: 20px;
+    }
+  }
+}
