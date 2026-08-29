@@ -1,5 +1,7 @@
+@use '../utils/variables' as v;
+
 .container {
   max-width: 1285px;
-  padding-inline: 20px;
+  padding-inline: v.$gap-md;
   margin-inline: auto;
 }

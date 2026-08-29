@@ -1,0 +1,36 @@
+@use '../utils/variables' as v;
+
+.last-notes {
+  &__title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: v.$font500;
+
+    @media (max-width: v.$bp540) {
+      margin-bottom: v.$mg-bot10;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__flex {
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-xs;
+  }
+
+  &__card {
+    border: 1px solid v.$gray;
+    border-radius: v.$br10;
+    max-width: 600px;
+    padding: v.$gap-sm v.$gap-lg;
+
+    
+  }
+
+  &__text {
+    font-weight: v.$font400;
+    font-size: 14px;
+  }
+}

@@ -4,14 +4,18 @@
   &__inner {
     display: flex;
     align-items: center;
-    padding-block: 25px;
+    padding-block: v.$gap-lg;
   }
 
   &__brand {
     margin-left: 70px;
 
     @media (max-width: v.$bp800) {
-      margin-left: 20px;
+      margin-left: v.$gap-md;
     }
+  }
+
+  &__logo-text {
+    font-size: 24px;
   }
 }

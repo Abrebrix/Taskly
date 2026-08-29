@@ -12,7 +12,7 @@
 
   &__title {
     margin-bottom: 30px;
-    font-weight: 800;
+    font-weight: v.$font800;
     font-size: 64px;
   }
 
@@ -24,7 +24,7 @@
 
     @media (max-width: v.$bp400) {
       font-size: 24px;
-      margin-bottom: 40px;
+      margin-bottom: v.$mg-bot40;
     }
   }
 }

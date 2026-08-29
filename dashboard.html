@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <a href="#" class="sidebar__logo-text brand-text">Taskly</a>
+      <button class="sidebar__new-folder btn btn--white">+ Новая папка</button>
+      <button class="sidebar__all-folder btn btn--gray">Все папки</button>
+
+      <section class="folders sidebar__folders">
+        <h2 class="folders__title">ПАПКИ</h2>
+
+        <nav class="folders__nav">
+          <ul class="folders__list">
+            <li class="folders__item">
+              <button class="folders__button">
+                <span class="folders__text"></span>Нет последних папок
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <button class="sidebar__trash btn btn--red">
+        <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14z" />
+        </svg>
+        <span class="btn__text">Корзина</span>
+      </button>
+    </aside>
+
+    <main class="workspace">
+      <div class="container">
+        <div class="workspace__inner">
+          <h1 class="workspace__title">Все папки</h1>
+
+          <section class="projects workspace__projects">
+            <h3 class="projects__title">ПАПКИ</h3>
+            <div class="projects__flex">
+              <button class="projects__card">
+                <span class="projects__text">Нет последних папок</span>
+                <span class="projects__plus">+</span>
+              </button>
+            </div>
+          </section>
+          <section class="last-notes workspace__last-notes">
+            <h3 class="last-notes__title">ПОСЛЕДНИЕ ЗАМЕТКИ</h3>
+
+            <div class="last-notes__flex">
+              <button class="last-notes__card">
+                <span class="last-notes__text">Нет последних заметок</span>
+              </button>
+            </div>
+          </section>
+
+          <button class="workspace__create-note btn btn--white">
+            <span class="workspace__text">+ Создать новую заметку</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

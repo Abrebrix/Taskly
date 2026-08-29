@@ -13,38 +13,37 @@
     <header class="header page-auth__header">
       <div class="header__inner">
         <a href="index.html" class="brand header__brand">
-          <span class="brand__name">Taskly</span>
-          <img src="img/logo.svg" alt="" class="brand__logo">
+          <span class="brand-text brand-text--sm">Taskly</span>
+          <img src="img/logo.svg" alt="Логотип Taskly" class="brand-icon">
         </a>
       </div>
     </header>
-    <main class="main">
-      <section class="welcome">
-        <div class="container">
-          <div class="welcome__inner">
+    <main class="welcome">
+      <div class="container">
+        <div class="welcome__inner">
 
-            <h1 class="welcome__title">Taskly</h1>
-            <p class="welcome__subtitle">Пространство для заметок и идей</p>
+          <h1 class="welcome__title">Taskly</h1>
+          <p class="welcome__subtitle">Пространство для заметок и идей</p>
 
-            <div class="auth-options">
-              <a href="registration.html" class="auth-options__card auth-options__card--reg">
-                <h2 class="auth-options__title">Продолжить с регистрацией</h2>
+          <div class="auth-options">
+            <a href="registration.html" class="auth-options__card auth-options__card--reg">
+              <h2 class="auth-options__title">Продолжить с регистрацией</h2>
 
-                <ul class="auth-options__list">
-                  <li class="auth-options__item">• Почта</li>
-                  <li class="auth-options__item">• Пароль</li>
-                </ul>
-              </a>
+              <ul class="auth-options__list">
+                <li class="auth-options__item">• Почта</li>
+                <li class="auth-options__item">• Пароль</li>
+              </ul>
+            </a>
 
-              <a href="#" class="auth-options__card auth-options__card--guest">
-                <h2 class="auth-options__title">Без регистрации</h2>
+            <button type="button" onclick="window.location.href='dashboard.html'"
+              class="auth-options__card auth-options__card--guest">
+              <h2 class="auth-options__title">Без регистрации</h2>
 
-                <p class="auth-options__text">Ты можешь потреять свои заметки</p>
-              </a>
-            </div>
+              <p class="auth-options__text">Ты можешь потерять свои заметки</p>
+            </button>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   </div>
 </body>

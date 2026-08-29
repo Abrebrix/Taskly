@@ -1,11 +1,72 @@
 @use 'variables' as v;
 
 @mixin title-base {
-    font-weight: 800;
+    font-weight: v.$font800;
     text-align: center;
 }
 
 @mixin subtitle-base {
     color: v.$gray;
     text-align: center;
+}
+
+@mixin btn-base {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: v.$btn-radius;
+    width: v.$btn-width;
+    height: v.$btn-height;
+    font-size: 14px;
+    font-weight: v.$font500;
+    transition: v.$transition;
+}
+
+@mixin btn-black {
+    color: v.$white;
+    background-color: v.$black;
+
+    &:hover {
+      color: v.$black;
+      background-color: v.$white;
+      border: 1px solid v.$black;
+    }
+}
+
+@mixin btn-white {
+    color: v.$black;
+    border: 1px solid v.$black;
+
+    &:hover {
+      color: v.$white;
+      background-color: v.$black;
+    }
+}
+
+@mixin btn-gray {
+    color: v.$white;
+    background-color: v.$dark-gray;
+
+    &:hover {
+      color: v.$white;
+      background-color: v.$gray;
+      border: 1px solid v.$white;
+    }
+}
+
+@mixin btn-red {
+    color: v.$red;
+    border: 1px solid v.$red;
+    gap: v.$gap-sm;
+    background-color: transparent;
+
+    .btn__icon {
+        stroke: currentColor;
+        fill: none;
+    }
+
+    &:hover {
+        background-color: v.$red;
+        color: v.$white;
+    }
 }

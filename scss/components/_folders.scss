@@ -1,0 +1,24 @@
+@use '../utils/variables' as v;
+
+.folders {  
+  &__title {
+    margin-bottom: v.$mg-bot10;
+    font-size: 16px;
+    font-weight: v.$font500;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-xs;
+  }
+
+  &__button {
+    border: 1px solid v.$gray;
+    border-radius: v.$br10;
+    padding: 7px 15px 7px v.$gap-sm;
+    margin-bottom: v.$gap-xs;
+    font-size: 14px;
+    max-width: 197px;
+  }
+}

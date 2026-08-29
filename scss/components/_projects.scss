@@ -1,0 +1,72 @@
+@use '../utils/variables' as v;
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  
+@media (max-width: v.$bp540) {
+      margin-bottom: 118px;
+    }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: v.$font500;
+
+    @media (max-width: v.$bp540) {
+      margin-bottom: v.$mg-bot10;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    gap: v.$gap-lg;
+  }
+
+  &__card {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    border: 1px solid v.$gray;
+    border-radius: v.$card-radius;
+    padding: 17px v.$gap-md v.$gap-sm;
+
+    @media (max-width: v.$bp900) {
+      width: 180px;
+    }
+
+    @media (max-width: v.$bp540) {
+      width: 400px;
+      height: 60px;
+      padding: 4px v.$gap-md;
+      flex-direction: row;
+      align-items: center;
+      border-radius: v.$br15;
+    }
+
+    @media (max-width: v.$bp400) {
+      width: 320px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: v.$font400;
+    max-width: 159px;
+  }
+
+  &__plus {
+    font-weight: v.$font500;
+    font-size: 32px;
+    margin-top: auto;
+
+    @media (max-width: v.$bp540) {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+}

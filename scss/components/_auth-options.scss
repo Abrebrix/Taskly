@@ -2,10 +2,10 @@
 
 .auth-options {
   display: flex;
-  gap: 20px;
+  gap: v.$gap-md;
 
   @media (max-width: v.$bp500) {
-    gap: 5px;
+    gap: v.$gap-xs;
   }
 
   &__card {
@@ -15,13 +15,13 @@
     justify-content: center;
 
     height: 192px;
-    padding: 0 20px;
+    padding: 0 v.$gap-md;
 
     border: 1px solid v.$black;
-    border-radius: v.$br30;
+    border-radius: v.$card-radius;
     text-align: left;
     color: v.$black;
-    transition: .3s;
+    transition: v.$transition-md;
 
     &:hover {
       background-color: v.$black;
@@ -40,12 +40,12 @@
 
     &--guest {
       max-width: 185px;
-      gap: 40px;
+      gap: v.$gap-xl;
     }
   }
 
   &__title {
-    font-weight: 400;
+    font-weight: v.$font400;
     font-size: 20px;
 
     @media (max-width: v.$bp400) {
@@ -59,7 +59,7 @@
     align-items: flex-start;
     gap: 2px;
 
-    font-weight: 400;
+    font-weight: v.$font400;
     font-size: 15px;
 
     @media (max-width: v.$bp400) {
@@ -68,7 +68,7 @@
   }
 
   &__text {
-    font-weight: 400;
+    font-weight: v.$font400;
     font-size: 15px;
 
     @media (max-width: v.$bp400) {

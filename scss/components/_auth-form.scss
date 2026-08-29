@@ -14,45 +14,25 @@
 
   &__label {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: v.$font500;
     color: v.$black;
   }
 
   &__input {
     border: 1px solid v.$black;
-    border-radius: 10px;
+    border-radius: v.$input-radius;
     width: 300px;
     height: 35px;
-    padding: 0 10px;
-  }
-
-  &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: v.$black;
-    color: v.$white;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 15px;
-    width: 200px;
-    height: 40px;
-    transition: .25s;
-
-    &:hover {
-      color: v.$black;
-      background-color: v.$white;
-      border: 1px solid v.$black;
-    }
+    padding: 0 v.$gap-sm;
   }
 
   &__text {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: v.$font500;
   }
 
   &__link {
-    transition: color .25s;
+    transition: color v.$transition;
 
     &:hover {
       color: v.$gray;

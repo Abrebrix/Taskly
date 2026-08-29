@@ -21,7 +21,7 @@
 
   &__subtitle {
   @include m.subtitle-base;
-    font-weight: 400;
+    font-weight: v.$font400;
     font-size: 12px;
     margin-bottom: v.$mg-bot40;
   }

@@ -1,0 +1,22 @@
+@use '../utils/mixins' as m;
+@use '../utils/variables' as v;
+
+.btn {
+  @include m.btn-base;
+
+  &--black {
+    @include m.btn-black;
+  }
+
+  &--white {
+    @include m.btn-white;
+  }
+
+  &--gray {
+    @include m.btn-gray;
+  }
+
+  &--red {
+    @include m.btn-red;
+  }
+}

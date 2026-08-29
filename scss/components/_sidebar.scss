@@ -1,0 +1,35 @@
+@use '../utils/variables' as v;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  max-width: v.$sidebar-width;
+  padding: 45px v.$gap-md;
+  border-right: 1px solid v.$black;
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  @media (max-width: v.$bp900) {
+    display: none;
+  }
+
+  &__logo-text {
+    font-size: 40px;
+    margin-bottom: 70px;
+  }
+
+  &__new-folder {
+    margin-bottom: v.$gap-xs;
+  }
+
+  &__all-folder {
+    margin-bottom: 45px;
+  }
+
+  &__folders {
+    margin-bottom: auto;
+  }
+}

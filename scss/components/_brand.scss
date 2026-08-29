@@ -3,15 +3,15 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: v.$gap-sm;
 
-  &__name {
+  &-text {
     font-weight: v.$font800;
     color: v.$black;
-    font-size: 24px;
-
-    @media (max-width: v.$bp800) {
-      font-size: 18px;
-    }
-  }
 }
+
+  &-text--sm {
+    font-size: 24px;
+}
+}
+

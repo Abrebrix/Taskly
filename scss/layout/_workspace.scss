@@ -1,0 +1,40 @@
+@use '../utils/variables' as v;
+
+.workspace {
+  flex: 1;
+  display: flex;
+
+  &__inner {
+    width: 875px;
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: v.$bp1200) {
+      width: 500px;
+    }
+
+    @media (max-width: v.$bp540) {
+      width: 280px;
+    }
+  }
+
+  &__title {
+    font-weight: v.$font800;
+    font-size: 48px;
+    margin-bottom: v.$mg-bot40;
+    text-align: center;
+  }
+
+  &__projects {
+    margin-bottom: 55px;
+
+    @media (max-width: v.$bp540) {
+      margin-bottom:1px;
+    }
+  }
+
+  &__create-note {
+    margin-inline: auto;
+  }
+}

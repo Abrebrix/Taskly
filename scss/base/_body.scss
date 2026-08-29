@@ -1,5 +1,7 @@
+@use '../utils/variables' as v;
+
 body {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: v.$font400;
   min-width: 320px;
 }

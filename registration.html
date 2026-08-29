@@ -13,40 +13,39 @@
     <header class="header page-auth__header">
       <div class="header__inner">
         <a href="index.html" class="brand header__brand">
-          <span class="brand__name">Taskly</span>
-          <img src="img/logo.svg" alt="" class="brand__logo">
+          <span class="brand-text brand-text--sm">Taskly</span>
+          <img src="img/logo.svg" alt="Логотип Taskly" class="brand-icon">
         </a>
       </div>
     </header>
-    <main class="main">
-      <section class="registration">
-        <div class="container">
-          <div class="registration__inner">
-            <h1 class="registration__title">Регистрация</h1>
-            <p class="registration__subtitle">Создайте аккаунт, чтобы сохранять заметки</p>
+    <main class="registration">
+      <div class="container">
+        <div class="registration__inner">
+          <h1 class="registration__title">Регистрация</h1>
+          <p class="registration__subtitle">Создайте аккаунт, чтобы сохранять заметки</p>
 
-            <form action="#" method="POST" class="auth-form">
-              <div class="auth-form__group">
-                <label class="auth-form__label" for="name">Имя</label>
-                <input class="auth-form__input" type="text" id="name" name="name" placeholder="Введите ваше имя">
-              </div>
+          <form action="#" method="POST" class="auth-form">
+            <div class="auth-form__group">
+              <label class="auth-form__label" for="name">Имя</label>
+              <input class="auth-form__input" type="text" id="name" name="name" placeholder="Введите ваше имя">
+            </div>
 
-              <div class="auth-form__group">
-                <label class="auth-form__label" for="email">Почта</label>
-                <input class="auth-form__input" type="email" id="email" name="email" placeholder="Введите вашу почту">
-              </div>
+            <div class="auth-form__group">
+              <label class="auth-form__label" for="email">Почта</label>
+              <input class="auth-form__input" type="email" id="email" name="email" placeholder="Введите вашу почту">
+            </div>
 
-              <div class="auth-form__group">
-                <label class="auth-form__label" for="password">Пароль</label>
-                <input class="auth-form__input" type="password" id="password" name="password"
-                  placeholder="Введите ваш пароль">
-              </div>
-              <a href="#" class="auth-form__button">Создать аккаунт</a>
-              <p class="auth-form__text">Уже есть аккаунт? <a href="login.html" class="auth-form__link">Войти</a></p>
-            </form>
-          </div>
+            <div class="auth-form__group">
+              <label class="auth-form__label" for="password">Пароль</label>
+              <input class="auth-form__input" type="password" id="password" name="password"
+                placeholder="Введите ваш пароль">
+            </div>
+            <button type="button" onclick="window.location.href='dashboard.html'"
+              class="btn btn--black auth-form__button">Создать аккаунт</button>
+            <p class="auth-form__text">Уже есть аккаунт? <a href="login.html" class="auth-form__link">Войти</a></p>
+          </form>
         </div>
-      </section>
+      </div>
     </main>
   </div>
 </body>
