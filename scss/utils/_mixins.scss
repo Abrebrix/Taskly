@@ -70,3 +70,8 @@
         color: v.$white;
     }
 }
+
+@mixin btn-small {
+        width: v.$btn-small-width;
+        height: v.$btn-small-height;
+    }

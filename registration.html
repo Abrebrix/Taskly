@@ -24,7 +24,7 @@
           <h1 class="registration__title">Регистрация</h1>
           <p class="registration__subtitle">Создайте аккаунт, чтобы сохранять заметки</p>
 
-          <form action="#" method="POST" class="auth-form">
+          <form action="dashboard.html" method="get" class="auth-form">
             <div class="auth-form__group">
               <label class="auth-form__label" for="name">Имя</label>
               <input class="auth-form__input" type="text" id="name" name="name" placeholder="Введите ваше имя">
@@ -40,7 +40,7 @@
               <input class="auth-form__input" type="password" id="password" name="password"
                 placeholder="Введите ваш пароль">
             </div>
-            <button type="button" onclick="window.location.href='dashboard.html'"
+            <button type="submit"
               class="btn btn--black auth-form__button">Создать аккаунт</button>
             <p class="auth-form__text">Уже есть аккаунт? <a href="login.html" class="auth-form__link">Войти</a></p>
           </form>

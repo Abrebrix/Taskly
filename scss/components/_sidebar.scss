@@ -3,12 +3,13 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 500px;
   position: sticky;
   top: 0;
   max-width: v.$sidebar-width;
   padding: 45px v.$gap-md;
-  border-right: 1px solid v.$black;
+  border: 1px solid v.$black;
+  border-radius: v.$br20;
   flex-shrink: 0;
   align-self: flex-start;
 

@@ -1,0 +1,10 @@
+.profile {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+
+  &__wrapper {
+    width: 30px;
+    height: 30px;
+  }
+}

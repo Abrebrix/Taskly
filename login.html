@@ -22,9 +22,9 @@
       <div class="container">
         <div class="login__inner">
           <h1 class="login__title">Вход в Taskly</h1>
-          <h3 class="login__subtitle">Войдите в аккаунт</h3>
+          <h2 class="login__subtitle">Войдите в аккаунт</h2>
 
-          <form action="#" method="POST" class="auth-form">
+          <form action="dashboard.html" method="get" class="auth-form">
             <div class="auth-form__group">
               <label class="auth-form__label" for="email">Почта</label>
               <input class="auth-form__input" type="email" id="email" name="email" placeholder="Введите вашу почту">
@@ -36,7 +36,7 @@
                 placeholder="Введите ваш пароль">
             </div>
 
-            <button type="button" onclick="window.location.href='dashboard.html'" href="#"
+            <button type="submit"
               class="btn btn--black auth-form__button">Войти</button>
 
             <p class="auth-form__text">Нет аккаунта? <a class="auth-form__link" href="registration.html">Создайте</a>

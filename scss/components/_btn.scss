@@ -4,6 +4,10 @@
 .btn {
   @include m.btn-base;
 
+  &--small {
+    @include m.btn-small
+  }
+
   &--black {
     @include m.btn-black;
   }

@@ -1,4 +1,8 @@
 .dashboard {
   display: flex;
   gap: 30px;
+
+  &__sidebar {
+    margin-left: 10px;
+  }
 }
