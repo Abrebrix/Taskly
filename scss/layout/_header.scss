@@ -5,13 +5,29 @@
     display: flex;
     align-items: center;
     padding-block: 25px;
+
+    &--app {
+      justify-content: space-between;
+    }
   }
 
-  &__brand {
-    margin-left: 70px;
+  &__1340 {
+    max-width: 1340px;
+  }
 
-    @media (max-width: v.$bp800) {
-      margin-left: 20px;
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__menu-img {
+    display: none;
+    width: 30px;
+    height: 30px;
+
+    @media(width <= v.$bp650) {
+      display: block;
     }
   }
 }

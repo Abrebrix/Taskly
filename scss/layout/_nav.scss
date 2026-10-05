@@ -1,0 +1,24 @@
+@use '../utils/variables' as v;
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    &--app {
+      gap: 20px;
+      background-color: v.$black;
+      border-radius: v.$br20;
+      padding: 9px 21px;
+    }
+  }
+
+  &__link--app {
+    color: v.$white;
+    font-weight: 700;
+  }
+
+  @media(width <= 650px) {
+    display: none;
+  }
+}

@@ -1,0 +1,24 @@
+@use '../utils/variables' as v;
+
+.btn {
+  border-radius: v.$br30;
+
+  &--red {
+    border: 1px solid v.$red;
+    color: v.$red;
+  }
+
+  &--small {
+    padding: 8px 12px;
+  }
+
+  &--hide-bp650 {
+    @media(width <=v.$bp650) {
+      display: none;
+    }
+  }
+
+  &--br10 {
+    border-radius: v.$br10;
+  }
+}

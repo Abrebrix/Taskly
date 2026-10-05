@@ -4,48 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Регистрация — Taskly</title>
+  <title>Вход — Taskly</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div class="page-auth">
-    <header class="header page-auth__header">
+  <div class="container">
+    <header class="header wrapper__header  header__1340">
       <div class="header__inner">
         <a href="index.html" class="brand header__brand">
           <span class="brand__name">Taskly</span>
-          <img src="img/logo.svg" alt="" class="brand__logo">
+          <img src="img/logo.svg" alt=" Taskly">
         </a>
       </div>
     </header>
-    <main class="main">
-      <section class="login">
-        <div class="container">
-          <div class="login__inner">
-            <h1 class="login__title">Вход в Taskly</h1>
-            <h3 class="login__subtitle">Войдите в аккаунт</h3>
+    <main class="login">
+      <div class="container">
+        <div class="login__inner">
+          <h1 class="login__title">Вход в Taskly</h1>
+          <h2 class="login__subtitle">Войдите в аккаунт</h2>
 
-            <form action="#" method="POST" class="auth-form">
-              <div class="auth-form__group">
-                <label class="auth-form__label" for="email">Почта</label>
-                <input class="auth-form__input" type="email" id="email" name="email" placeholder="Введите вашу почту">
-              </div>
+          <form action="app.html" method="get" class="auth-form">
+            <div class="auth-form__group">
+              <label class="auth-form__label" for="email">Почта</label>
+              <input class="auth-form__input" type="email" id="email" name="email" placeholder="Введите вашу почту">
+            </div>
 
-              <div class="auth-form__group">
-                <label class="auth-form__label" for="password">Пароль</label>
-                <input class="auth-form__input" type="password" id="password" name="password"
-                  placeholder="Введите ваш пароль">
-              </div>
+            <div class="auth-form__group">
+              <label class="auth-form__label" for="password">Пароль</label>
+              <input class="auth-form__input" type="password" id="password" name="password"
+                placeholder="Введите ваш пароль">
+            </div>
 
-              <a href="#" class="auth-form__button">Войти</a>
+            <button type="submit" class="btn btn--black auth-form__button">Войти</button>
 
-              <p class="auth-form__text">Нет акаунта? <a class="auth-form__link" href="registration.html">Создайте</a>
-              </p>
-            </form>
+            <p class="auth-form__text">Нет аккаунта? <a class="auth-form__link" href="registration.html">Создайте</a>
+            </p>
+          </form>
 
-          </div>
         </div>
-      </section>
+      </div>
     </main>
   </div>
 </body>

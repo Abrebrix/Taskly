@@ -1,0 +1,14 @@
+.page-app {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__aside-folder {
+    align-items: flex-start;
+  }
+
+  &__aside-notes {
+    align-items: flex-start;
+  }
+}

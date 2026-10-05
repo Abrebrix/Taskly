@@ -13,5 +13,12 @@
     @media (max-width: v.$bp800) {
       font-size: 18px;
     }
+
+    &--app {
+      font-size: 40px;
+      font-weight: 800;
+      color: v.$black;
+    }
   }
+
 }

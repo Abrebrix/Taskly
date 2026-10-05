@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="page-app">
+    <div class="container">
+      <header class="header header__1340">
+        <div class="header__inner header__inner--app">
+          <a href="index.html" class="brand header__brand">
+            <span class="brand__name--app">Taskly</span>
+          </a>
+
+          <nav class="nav">
+            <ul class="nav__list nav__list--app">
+              <li class="nav__item">
+                <a href="index.html" class="nav__link--app">Главаная</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link--app">О Taskly</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link--app">Premium</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__user">
+
+            <a href="#"><img src="img/profile.svg" alt="Профиль" class="profile-img"></a>
+            <button class="btn btn--red btn--small btn--hide-bp650">Выход</button>
+            <button>
+              <img src="./img/menu.svg" alt="Кнопка меню" class="header__menu-img">
+            </button>
+
+          </div>
+        </div>
+      </header>
+      <main class="page-app__main">
+        <aside class="aside page-app__aside-folders">
+          <button class="btn--br10 aside__btn-create-folder">
+            <img src="./img/folder.svg" alt="Иконка папки" class="aside__folder-img">
+            <span class="btn__text">+ Новая папка</span>
+          </button>
+
+          <h2 class="aside__folder-title">ПАПКИ</h2>
+          <ul class="aside__folders-list"></ul>
+
+          <button class="btn--br10 aside__btn-trash">
+            <img src="./img/trash.svg" alt="trash icon">
+            <span class="btn__text">Корзина</span>
+          </button>
+        </aside>
+
+        <section class="note-search">
+          <div class="note-search__wrapper">
+            <img src="./img/logo.svg" alt="Лого" 
+            class="brand__logo note-search__icon">
+            
+            <input type="text" class="note-search__input"
+             placeholder="Поиск заметок">
+          </div>
+        </section>
+
+        <aside class="aside page-app__aside-notes">
+          <h2 class="aside__note-title">Заметки</h2>
+          <ul class="aside__note-list">
+            <li class="aside__note-btn"> <!--aside__note-item -->
+              <button class="aside__list-btn">
+                <span class="aside__list-text">+ Создать заметку</span>
+              </button>
+            </li>
+          </ul>
+        </aside>
+      </main>
+
+    </div>
+  </div>
+</body>
+
+</html>
