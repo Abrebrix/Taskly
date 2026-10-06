@@ -1,46 +1,56 @@
 @use '../utils/variables' as v;
+
 .aside {
   border: 1px solid v.$black;
   border-radius: 10px;
   padding: 20px 12px;
   display: flex;
   flex-direction: column;
-  min-width: 19%;
+  width: 19%;
   min-height: 366px;
 
-  @media(width <= v.$bp650) {
-
-  }
+  @media(width <=v.$bp650) {}
 
   &__btn-create-folder {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin-bottom: 20px;
-    padding: 10px 14px;
     border: 1px solid v.$black;
-    width: 100%;
   }
 
-  &__folder-title {
-    margin-bottom: 10px;
-    font-weight: v.$font400;
-    font-size: 16px;
-  }
-
-  &__folders-list {
-    margin-bottom: auto;
-    width: 100%;
-  }
-
-  &__btn-trash {
+  &__btn {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 14px;
-    border: 1px solid v.$red;
-    width: 91%;
-    color: v.$red;
+    width: 100%;
+
+    @media(width <=v.$bp750) {
+      width: fit-content;
+    }
+  }
+
+  &__folder {
+    &-title {
+      margin-bottom: 10px;
+      font-weight: v.$font400;
+      font-size: 16px;
+    }
+
+    &-list {
+      margin-bottom: auto;
+      width: 100%;
+    }
+
+    &-img {
+      @media(width <=v.$bp750) {
+        display: none;
+      }
+    }
+  }
+
+  &__trash-img {
+    @media(width <=v.$bp750) {
+      display: none;
+    }
   }
 
   &__note-title {
@@ -52,27 +62,28 @@
 
   &__list-text {
     font-size: 14px;
-    font-weight: v.$font500;
   }
 
-  &__note-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+  &__note {
+    &-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-  &__note-item {
-    border: 1px solid v.$black;
-    border-radius: v.$br8;
-    padding: 2px 6px;
-    width: 100%;
-  }
+    &-item {
+      border: 1px solid v.$black;
+      border-radius: v.$br8;
+      padding: 2px 6px;
+      width: 100%;
+    }
 
-  &__note-btn {
-    border: 1px solid v.$black;
-    border-radius: v.$br8;
-    padding: 2px 6px;
-    width: fit-content;
-    align-self: center;
+    &-btn {
+      border: 1px solid v.$black;
+      border-radius: v.$br8;
+      padding: 2px 6px;
+      width: fit-content;
+      align-self: center;
+    }
   }
 }

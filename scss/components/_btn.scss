@@ -21,4 +21,10 @@
   &--br10 {
     border-radius: v.$br10;
   }
+
+  &__text {
+    @media(width <=v.$bp870) {
+      font-size: 12px;
+    }
+  }
 }

@@ -44,16 +44,20 @@
       </header>
       <main class="page-app__main">
         <aside class="aside page-app__aside-folders">
-          <button class="btn--br10 aside__btn-create-folder">
-            <img src="./img/folder.svg" alt="Иконка папки" class="aside__folder-img">
-            <span class="btn__text">+ Новая папка</span>
+          <button class="btn--br10 aside__btn aside__btn-create-folder">
+            <img src="./img/folder.svg" 
+            alt="Иконка папки" class="aside__folder-img">
+
+            <span class="btn__text js-replace-text+ папка">Создать папку</span>
           </button>
 
           <h2 class="aside__folder-title">ПАПКИ</h2>
-          <ul class="aside__folders-list"></ul>
+          <ul class="aside__folder-list"></ul>
 
-          <button class="btn--br10 aside__btn-trash">
-            <img src="./img/trash.svg" alt="trash icon">
+          <button class="btn--br10 aside__btn btn--red">
+            <img src="./img/trash.svg" 
+            alt="trash icon" class="aside__trash-img">
+
             <span class="btn__text">Корзина</span>
           </button>
         </aside>
@@ -73,7 +77,7 @@
           <ul class="aside__note-list">
             <li class="aside__note-btn"> <!--aside__note-item -->
               <button class="aside__list-btn">
-                <span class="aside__list-text">+ Создать заметку</span>
+                <span class="aside__list-text">+ заметка</span>
               </button>
             </li>
           </ul>
