@@ -5,7 +5,7 @@
   padding: 20px 12px;
   display: flex;
   flex-direction: column;
-  min-width: 274px;
+  min-width: 19%;
   min-height: 366px;
 
   @media(width <= v.$bp650) {
@@ -19,7 +19,7 @@
     margin-bottom: 20px;
     padding: 10px 14px;
     border: 1px solid v.$black;
-    width: 91%;
+    width: 100%;
   }
 
   &__folder-title {

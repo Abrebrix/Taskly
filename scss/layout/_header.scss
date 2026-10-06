@@ -21,13 +21,16 @@
     gap: 15px;
   }
 
-  &__menu-img {
+  &__menu-btn {
     display: none;
-    width: 30px;
-    height: 30px;
 
-    @media(width <= v.$bp650) {
+    @media(width <=v.$bp650) {
       display: block;
     }
+  }
+
+  &__menu-img {
+    width: 30px;
+    height: 30px;
   }
 }
