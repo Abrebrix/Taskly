@@ -1,7 +1,15 @@
+@use '../utils/variables' as v;
+
 .page-app {
   &__main {
     display: flex;
     justify-content: space-between;
+
+    @media(width <=v.$bp500) {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
   }
 
   &__aside-folder {

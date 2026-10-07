@@ -12,13 +12,30 @@
     transform: translateY(-50%);
     left: 14px;
     pointer-events: none;
+
+    @media(width <=v.$bp500) {
+      display: none;
+  }
   }
 
   &__input {
-    border: 1px solid v.$black;
+    border: 2px solid v.$black;
     border-radius: v.$br10;
-    min-width: 300px;
-    min-height: 40px;
+    width: 30vw;
+    max-width: 500px;
+    height: 40px;
     padding-left: 47px;
+
+    @media(width <=v.$bp1000) {
+      width: 50vw;
+    }
+
+    @media(width <=v.$bp1000) {
+      width: 40vw;
+    }
+
+    @media(width <=v.$bp500) {
+      display: none;
+    }
   }
 }
