@@ -6,6 +6,8 @@
     position: relative;
   }
 
+
+
   &__icon {
     position: absolute;
     top: 50%;
@@ -15,8 +17,10 @@
 
     @media(width <=v.$bp500) {
       display: none;
+    }
   }
-  }
+
+
 
   &__input {
     border: 2px solid v.$black;

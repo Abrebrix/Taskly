@@ -12,11 +12,15 @@
     }
   }
 
-  &__aside-folder {
-    align-items: flex-start;
-  }
 
-  &__aside-notes {
-    align-items: flex-start;
+
+  &__aside {
+    &-folder {
+      align-items: flex-start;
+    }
+
+    &-notes {
+      align-items: flex-start;
+    }
   }
 }

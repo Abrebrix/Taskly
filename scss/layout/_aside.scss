@@ -23,9 +23,7 @@
     max-height: 280px;
   }
 
-  &__btn-create-folder {
-    margin-bottom: 20px;
-  }
+
 
   &__btn {
     display: flex;
@@ -38,7 +36,14 @@
     @media(width <=v.$bp500) {
       width: 100%;
     }
+
+    &-create-folder {
+      margin-bottom: 20px;
+    }
   }
+
+
+
 
   &__folder {
     &-title {
@@ -59,28 +64,28 @@
     }
   }
 
+
+
   &__trash-img {
     @media(width <=v.$bp750) {
       display: none;
     }
   }
 
-  &__note-title {
-    font-size: 28px;
-    font-weight: v.$font400;
-    align-self: center;
-    margin-bottom: 12px;
 
-    @media(width <=v.$bp800) {
-      font-size: 20px;
-    }
-  }
-
-  &__list-text {
-    font-size: 14px;
-  }
 
   &__note {
+    &-title {
+      font-size: 28px;
+      font-weight: v.$font400;
+      align-self: center;
+      margin-bottom: 12px;
+
+      @media(width <=v.$bp800) {
+        font-size: 20px;
+      }
+    }
+
     &-list {
       width: 100%;
       display: flex;
@@ -93,5 +98,11 @@
       padding: 2px 6px;
       width: 100%;
     }
+  }
+
+
+
+  &__list-text {
+    font-size: 14px;
   }
 }

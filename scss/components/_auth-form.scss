@@ -6,17 +6,23 @@
   align-items: center;
   gap: 12px;
 
+
+
   &__group {
     display: flex;
     flex-direction: column;
     gap: 3px;
   }
 
+
+
   &__label {
     font-size: 12px;
     font-weight: 500;
     color: v.$black;
   }
+
+
 
   &__input {
     border: 1px solid v.$black;
@@ -25,6 +31,8 @@
     height: 35px;
     padding: 0 10px;
   }
+
+
 
   &__button {
     display: flex;
@@ -46,10 +54,14 @@
     }
   }
 
+
+
   &__text {
     font-size: 12px;
     font-weight: 500;
   }
+
+
 
   &__link {
     transition: color .25s;

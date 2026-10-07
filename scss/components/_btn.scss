@@ -8,9 +8,13 @@
     color: v.$red;
   }
 
+
+
   &--small {
     padding: 8px 12px;
   }
+
+
 
   &--hide-bp650 {
     @media(width <=v.$bp650) {
@@ -18,9 +22,13 @@
     }
   }
 
+
+
   &--br10 {
     border-radius: v.$br10;
   }
+
+  
 
   &__text {
     @media(width <=v.$bp870) {

@@ -13,12 +13,16 @@
     }
   }
 
+
+
   &__link--app {
     color: v.$white;
     font-weight: 700;
   }
 
-  @media(width <= 650px) {
+
+
+  @media(width <=650px) {
     display: none;
   }
 }

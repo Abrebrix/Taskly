@@ -4,23 +4,27 @@
 
 .login {
   &__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+
 
   &__title {
     @include m.title-base;
     font-size: 48px;
     margin-bottom: v.$mg-bot10;
-    
+
     @media (max-width: v.$bp400) {
       font-size: 40px;
     }
   }
 
+
+
   &__subtitle {
-  @include m.subtitle-base;
+    @include m.subtitle-base;
     font-weight: 400;
     font-size: 12px;
     margin-bottom: v.$mg-bot40;

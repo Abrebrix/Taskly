@@ -11,9 +11,13 @@
     }
   }
 
+
+
   &__1340 {
     max-width: 1340px;
   }
+
+
 
   &__user {
     display: flex;
@@ -21,16 +25,20 @@
     gap: 15px;
   }
 
-  &__menu-btn {
-    display: none;
 
-    @media(width <=v.$bp650) {
-      display: block;
+
+  &__menu {
+    &-btn {
+      display: none;
+
+      @media(width <=v.$bp650) {
+        display: block;
+      }
     }
-  }
 
-  &__menu-img {
-    width: 30px;
-    height: 30px;
+    &-img {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
