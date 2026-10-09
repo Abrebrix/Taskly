@@ -44,10 +44,10 @@
       </header>
       <main class="page-app__main">
         <aside class="aside page-app__aside-folders">
-          <button class="btn--br10 aside__btn aside__btn-create-folder">
+          <button data-add="folder" class="btn--br10 aside__btn aside__btn-create-folder">
             <img src="./img/folder.svg" alt="Иконка папки" class="aside__folder-img">
 
-            <span class="btn__text js-replace-text">Создать папку</span>
+            <span class="btn__text">Создать папку</span>
           </button>
 
           <h2 class="aside__folder-title">ПАПКИ</h2>
@@ -70,18 +70,18 @@
 
         <aside class="aside page-app__aside-notes">
           <h2 class="aside__note-title">Заметки</h2>
-          <ul class="aside__note-list">
-            <li class="aside__note-btn"> <!--aside__note-item -->
-              <button class="aside__btn btn--br10">
-                <span class="aside__list-text">+ заметка</span>
-              </button>
-            </li>
-          </ul>
+
+          <button data-add="note" class="aside__btn btn--br10">
+            <span class="aside__list-text">Добавить заметку</span>
+          </button>
+
+          <ul class="aside__note-list"></ul>
         </aside>
       </main>
 
     </div>
   </div>
+
 </body>
 
 </html>

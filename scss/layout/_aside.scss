@@ -1,7 +1,7 @@
 @use '../utils/variables' as v;
 
 .aside {
-  border: 2px solid v.$black;
+  border: 1px solid v.$black;
   border-radius: 10px;
   padding: 20px 12px;
   display: flex;
@@ -31,7 +31,7 @@
     gap: 10px;
     padding: 10px 14px;
     width: 100%;
-    border: 2px solid v.$black;
+    border: 1px solid v.$black;
 
     @media(width <=v.$bp500) {
       width: 100%;
@@ -93,7 +93,7 @@
     }
 
     &-item {
-      border: 2px solid v.$black;
+      border: 1px solid v.$black;
       border-radius: v.$br8;
       padding: 2px 6px;
       width: 100%;
