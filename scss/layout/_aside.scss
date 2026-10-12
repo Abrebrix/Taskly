@@ -25,6 +25,12 @@
 
 
 
+  &-text {
+      font-size: 14px;
+    }
+
+
+
   &__btn {
     display: flex;
     align-items: center;
@@ -102,7 +108,23 @@
 
 
 
-  &__list-text {
-    font-size: 14px;
+  &__add-note-btn {
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    &-notes {
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &-note {
+      border: 1px solid v.$black;
+      border-radius: v.$br5;
+      width: 95%;
+    }
   }
 }

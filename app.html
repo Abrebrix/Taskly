@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body data-page="app">
   <div class="page-app">
     <div class="container">
       <header class="header header__1340">
@@ -44,8 +44,8 @@
       </header>
       <main class="page-app__main">
         <aside class="aside page-app__aside-folders">
-          <button data-add="folder" class="btn--br10 aside__btn aside__btn-create-folder">
-            <img src="./img/folder.svg" alt="Иконка папки" class="aside__folder-img">
+          <button data-action="add-folder" class="btn--br10 aside__btn aside__btn-create-folder">
+            <img src="./img/folder-black.svg" alt="Иконка папки" class="aside__folder-img">
 
             <span class="btn__text">Создать папку</span>
           </button>
@@ -60,27 +60,47 @@
           </button>
         </aside>
 
-        <section class="note-search">
-          <div class="note-search__wrapper">
-            <img src="./img/logo.svg" alt="Лого" class="brand__logo note-search__icon">
+        <div class="main-workspace main-workspace--hidden">
 
-            <input type="text" class="note-search__input" placeholder="Поиск заметок">
-          </div>
-        </section>
+          <section class="search">
+            <div class="search__wrapper">
+              <img src="./img/logo.svg" alt="Лого" class="brand__logo search__icon">
+              <input type="text" class="search__input" placeholder="Поиск заметок">
+            </div>
+          </section>
+
+          <section class="note">
+            <div class="note__form">
+
+              <div class="note__content">
+                <input placeholder="Название заметки..." type="text" class="note__name">
+                <textarea class="note__text" placeholder="Текст заметки..."></textarea>
+              </div>
+
+              <div class="note__active">
+                <button class="note__save-btn note__create-btn">Сохранить</button>
+                <button class="note__cancel-btn note__create-btn">Отменить</button>
+              </div>
+            </div>
+
+          </section>
+        </div>
 
         <aside class="aside page-app__aside-notes">
           <h2 class="aside__note-title">Заметки</h2>
 
-          <button data-add="note" class="aside__btn btn--br10">
-            <span class="aside__list-text">Добавить заметку</span>
+          <button data-action="add-note" class="aside__btn aside__add-note-btn btn--br10">
+            <span class="aside__text">Добавить заметку</span>
           </button>
 
-          <ul class="aside__note-list"></ul>
+          <ul data-note-list class="aside__list-notes"></ul>
         </aside>
       </main>
 
     </div>
   </div>
+
+  <script type="module" src="./js/main.js"></script>
 
 </body>
 

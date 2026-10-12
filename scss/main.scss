@@ -15,10 +15,12 @@
 @use './components/auth-options';
 @use './components/auth-form';
 @use './components/btn';
+@use './components/search';
+@use './components/note';
 
 // pages
 @use './pages/welcome';
 @use './pages/registration';
 @use './pages/login';
 @use './pages/app';
-@use './pages/note-search';
+@use './pages/main-workspace';

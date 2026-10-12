@@ -1,7 +1,9 @@
 @use '../utils/variables' as v;
 
 
-.note-search {
+.search {
+  margin-bottom: 60px;
+
   &__wrapper {
     position: relative;
   }

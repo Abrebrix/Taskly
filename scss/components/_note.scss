@@ -1,0 +1,104 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.note {
+  border: 1px solid v.$black;
+  border-radius: v.$br20;
+  width: 40vw;
+  height: 35vh;
+  padding: 10px;
+
+  @media(width <=v.$bp1000) {
+    width: 50vw;
+  }
+
+
+
+  &__form {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  &__content {
+    display: flex;
+    gap: 5px;
+    width: 75%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+
+  &__name {
+    border: 1px solid v.$black;
+    border-radius: v.$br8;
+    height: 10%;
+    padding: 10px;
+    font-size: 12px;
+    max-width: 250px;
+    transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+    &:focus {
+      border-color: v.$red;
+      box-shadow: 0 0 0 1px v.$red;
+    }
+  }
+
+
+
+  &__text {
+    border: 1px solid v.$black;
+    border-radius: v.$br15;
+    height: 80%;
+    padding: 10px;
+    resize: none;
+    transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+    &:focus {
+      outline: none;
+      border-color: v.$green;
+      box-shadow: 0 0 0 1px v.$green;
+    }
+  }
+
+
+
+  &__active {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto;
+  }
+
+
+
+  &__create-btn {
+    @include m.padding-9-11;
+    border-radius: v.$br10;
+    color: v.$white;
+  }
+
+
+
+  &__save-btn {
+    background: linear-gradient(to right,
+        v.$green 0%,
+        v.$green 5%,
+        v.$black 5%,
+        v.$black 100%);
+  }
+
+
+
+  &__cancel-btn {
+    background: linear-gradient(to right,
+        v.$red 0%,
+        v.$red 5%,
+        v.$black 5%,
+        v.$black 100%);
+  }
+}
