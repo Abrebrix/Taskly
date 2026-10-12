@@ -4,6 +4,9 @@
 .search {
   margin-bottom: 60px;
 
+  @media(width <= v.$bp650) {
+    margin-bottom: 0;
+  }
   &__wrapper {
     position: relative;
   }
@@ -17,7 +20,7 @@
     left: 14px;
     pointer-events: none;
 
-    @media(width <=v.$bp500) {
+    @media(width <=v.$bp650) {
       display: none;
     }
   }
@@ -40,7 +43,7 @@
       width: 40vw;
     }
 
-    @media(width <=v.$bp500) {
+    @media(width <=v.$bp650) {
       display: none;
     }
   }

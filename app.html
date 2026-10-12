@@ -47,7 +47,7 @@
           <button data-action="add-folder" class="btn--br10 aside__btn aside__btn-create-folder">
             <img src="./img/folder-black.svg" alt="Иконка папки" class="aside__folder-img">
 
-            <span class="btn__text">Создать папку</span>
+            <span>Создать папку</span>
           </button>
 
           <h2 class="aside__folder-title">ПАПКИ</h2>
@@ -56,11 +56,11 @@
           <button class="btn--br10 aside__btn btn--red">
             <img src="./img/trash.svg" alt="trash icon" class="aside__trash-img">
 
-            <span class="btn__text">Корзина</span>
+            <span>Корзина</span>
           </button>
         </aside>
 
-        <div class="main-workspace main-workspace--hidden">
+        <div data-workspace class="main-workspace main-workspace--hidden">
 
           <section class="search">
             <div class="search__wrapper">
@@ -78,8 +78,12 @@
               </div>
 
               <div class="note__active">
-                <button class="note__save-btn note__create-btn">Сохранить</button>
-                <button class="note__cancel-btn note__create-btn">Отменить</button>
+                <button data-action="save-note" class="note__save-btn note__create-btn">
+                  <span class="note__full-save">Сохранить</span>
+                </button>
+                <button data-action="cancle-note" class="note__cancle-btn note__create-btn">
+                  <span class="note__full-cancle">Отменить</span>
+                </button>
               </div>
             </div>
 

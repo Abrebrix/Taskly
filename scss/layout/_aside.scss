@@ -18,7 +18,7 @@
     width: 25%
   }
 
-  @media(width <=v.$bp500) {
+  @media(width <=v.$bp650) {
     width: 95%;
     max-height: 280px;
   }
@@ -39,7 +39,7 @@
     width: 100%;
     border: 1px solid v.$black;
 
-    @media(width <=v.$bp500) {
+    @media(width <=v.$bp650) {
       width: 100%;
     }
 
