@@ -54,10 +54,20 @@ function hideWorkspace() {
 }
 
 
-function showNotes() {
+function clearDomNotes() {
+  const noteList = document.querySelector('[data-note="list"]');
+  const noteFlag = document.querySelector('[data-note="flag"]');
+
+  noteList.innerHTML = '';
+  noteFlag.textContent = '';
+}
+
+
+function renderNote() {
+  const noteList = document.querySelector('[data-note="list"]');
+
   if (hasNotes()) {
-    const noteList = document.querySelector('[data-note="list"]');
-    noteList.innerHTML = '';
+    clearDomNotes();
 
     for (let i = 0; i < notes.length; i++) {
       const note = document.createElement('li');
@@ -81,6 +91,13 @@ function showNotes() {
       note.append(itemWrapper, noteBtn);
       noteList.append(note);
     }
+  }
+}
+
+
+function showNotes() {
+  if (hasNotes()) {
+    renderNote();
   } else {
     const noteListFlag = document.querySelector('[data-note="flag"]');
     noteListFlag.textContent = 'Нет заметок';
