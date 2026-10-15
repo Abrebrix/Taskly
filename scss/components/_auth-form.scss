@@ -64,6 +64,8 @@
 
 
   &__link {
+    color: v.$blue;
+    text-decoration: none;
     transition: color .25s;
 
     &:hover {
