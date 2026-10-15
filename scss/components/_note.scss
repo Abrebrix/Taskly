@@ -4,16 +4,17 @@
 .note {
   border: 1px solid v.$black;
   border-radius: v.$br20;
-  width: 40vw;
-  height: 35vh;
+  width: 90%;
+  height: 55%;
   padding: 10px;
 
-  @media(width <=v.$bp1000) {
-    width: 50vw;
+  @media(width <= v.$bp700) {
+    height: 90%;
   }
 
-  @media(width <=v.$bp650) {
-    width: 85vw;
+  @media(width <= v.$bp650) {
+    width: 95%;
+    height: 40vh;
   }
 
 

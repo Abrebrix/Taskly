@@ -6,21 +6,31 @@
   padding: 20px 12px;
   display: flex;
   flex-direction: column;
-  width: 19%;
+  width: 25%;
   height: 70vh;
   max-height: 500px;
+
+  @media(width <=v.$bp1000) {
+    width: 20%;
+  }
 
   @media(width <=v.$bp800) {
     padding: 10px 10px;
   }
 
   @media(width <=v.$bp650) {
-    width: 25%
-  }
-
-  @media(width <=v.$bp650) {
     width: 95%;
     max-height: 280px;
+  }
+
+
+
+  &__height35 {
+    height: 32vh;
+  }
+
+  &__height30 {
+    height: 30vh;
   }
 
 
