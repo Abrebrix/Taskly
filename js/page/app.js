@@ -63,41 +63,38 @@ function clearDomNotes() {
 }
 
 
-function renderNote() {
-  const noteList = document.querySelector('[data-note="list"]');
+function renderNote(noteData) {
+  const note = document.createElement('li');
+  const itemWrapper = document.createElement('div');
+  const noteName = document.createElement('span');
+  const noteText = document.createElement('span');
+  const noteBtn = document.createElement('button'); // на потом когда добавишь удаление заметок
 
-  if (hasNotes()) {
-    clearDomNotes();
+  note.classList.add('aside__note-item');
+  itemWrapper.classList.add('aside__note-item-wrapper');
 
-    for (let i = 0; i < notes.length; i++) {
-      const note = document.createElement('li');
-      const itemWrapper = document.createElement('div');
-      const noteName = document.createElement('span');
-      const noteText = document.createElement('span');
-      const noteBtn = document.createElement('button'); // на потом когда добавишь удаление заметок
+  note.dataset.id = noteData.id;
+  noteName.textContent = noteData.name;
+  noteText.textContent = noteData.text;
 
-      note.classList.add('aside__note-item');
-      itemWrapper.classList.add('aside__note-item-wrapper');
+  noteName.dataset.note = 'name';
+  noteText.dataset.note = 'text';
+  noteBtn.dataset.note = 'btn';
 
-      note.dataset.id = notes[i].id;
-      noteName.textContent = notes[i].name;
-      noteText.textContent = notes[i].text;
+  itemWrapper.append(noteName, noteText);
+  note.append(itemWrapper, noteBtn);
 
-      noteName.dataset.note = 'name';
-      noteText.dataset.note = 'text';
-      noteBtn.dataset.note = 'btn';
-
-      itemWrapper.append(noteName, noteText);
-      note.append(itemWrapper, noteBtn);
-      noteList.append(note);
-    }
-  }
+  return note;
 }
 
 
 function showNotes() {
+  const noteList = document.querySelector('[data-note="list"]');
+  clearDomNotes();
   if (hasNotes()) {
-    renderNote();
+    for (let i = 0; i < notes.length; i++) {
+      noteList.append(renderNote(notes[i]));
+    }
   } else {
     const noteListFlag = document.querySelector('[data-note="flag"]');
     noteListFlag.textContent = 'Нет заметок';

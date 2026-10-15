@@ -1,4 +1,4 @@
-let notesStorage = localStorage.getItem('notes') ;
+let notesStorage = localStorage.getItem('notes');
 // обратилсь в local storage за notes
 
 export let notes = notesStorage ? JSON.parse(notesStorage) : [];
@@ -7,4 +7,3 @@ export let notes = notesStorage ? JSON.parse(notesStorage) : [];
 export function hasNotes() {
   return notes.length > 0;
 }
-
