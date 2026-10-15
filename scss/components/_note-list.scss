@@ -16,22 +16,25 @@
 
     &-name {
       display: block;
-      font-size: 12px;
-      font-weight: v.$font500;
+      font-size: 11px;
+      font-weight: v.$font700;
       max-height: 14px;
-      overflow: hidden;
       max-width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-overflow: ellipsis;
     }
 
     &-text {
       display: block;
       padding-left: 8px;
-      max-height: 16px;
-      max-width: 90%;
+      font-weight: v.$font400;
+      font-size: 14px;
+      white-space: nowrap;
       overflow: hidden;
       overflow-wrap: break-word;
-      font-weight: v.$font700;
-      font-size: 14px;
+      text-overflow: ellipsis;
     }
 
     &-btn {}
