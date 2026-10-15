@@ -49,7 +49,7 @@ function hideWorkspace() {
   cancleNoteBtn.addEventListener('click', () => {
     const workspace = document.querySelector('[data-note="form"]');
 
-    workspace.classList.add('note__form--hidden')
+    workspace.classList.add('note__form--hidden');
   })
 }
 
@@ -71,7 +71,11 @@ function renderNote(noteData) {
   const noteBtn = document.createElement('button'); // на потом когда добавишь удаление заметок
 
   note.classList.add('aside__note-item');
-  itemWrapper.classList.add('aside__note-item-wrapper');
+  note.classList.add('note-list__item');
+  itemWrapper.classList.add('note-list__item-wrapper');
+  noteName.classList.add('note-list__item-name');
+  noteText.classList.add('note-list__item-text');
+  noteBtn.classList.add('note-list__item-btn');
 
   note.dataset.id = noteData.id;
   noteName.textContent = noteData.name;
@@ -91,6 +95,7 @@ function renderNote(noteData) {
 function showNotes() {
   const noteList = document.querySelector('[data-note="list"]');
   clearDomNotes();
+
   if (hasNotes()) {
     for (let i = 0; i < notes.length; i++) {
       noteList.append(renderNote(notes[i]));
