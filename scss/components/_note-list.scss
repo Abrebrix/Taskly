@@ -5,21 +5,33 @@
     display: flex;
     border: 1px solid v.$black;
     border-radius: v.$br8;
-    padding: 2px 6px;
+    padding: 4px 8px;
     width: 100%;
 
     &-wrapper {
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     &-name {
+      display: block;
       font-size: 12px;
-      font-weight: v.$font700;
+      font-weight: v.$font500;
+      max-height: 14px;
+      overflow: hidden;
+      max-width: 90%;
     }
 
     &-text {
+      display: block;
       padding-left: 8px;
+      max-height: 16px;
+      max-width: 90%;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      font-weight: v.$font700;
+      font-size: 14px;
     }
 
     &-btn {}
