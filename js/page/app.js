@@ -33,19 +33,6 @@ function showNoteSaveFlag() {
 }
 
 
-function editHeightNoteForm(open) {
-  const aside = document.querySelector('[data-aside]');
-
-  if (open) {
-    aside.classList.remove('aside__height30');
-    aside.classList.add('aside__height35');
-  } else {
-    aside.classList.remove('aside__height35');
-    aside.classList.add('aside__height30');
-  }
-}
-
-
 function showWorkspace() {
   const addNoteBtn = document.querySelector('[data-action="add-note"]');
 
@@ -162,6 +149,11 @@ function saveNote() {
       showNoteSaveFlag();
     }
   })
+}
+
+
+function delNote() {
+
 }
 
 

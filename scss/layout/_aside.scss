@@ -25,16 +25,6 @@
 
 
 
-  &__height35 {
-    height: 32vh;
-  }
-
-  &__height30 {
-    height: 30vh;
-  }
-
-
-
   &-text {
     font-size: 14px;
   }
@@ -91,6 +81,14 @@
 
 
   &__note {
+    &-list {
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
     &-title {
       font-size: 28px;
       font-weight: v.$font400;
@@ -116,14 +114,6 @@
   }
 
   &__list {
-    &-notes {
-      overflow-y: auto;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
     &-note {
       border: 1px solid v.$black;
       border-radius: v.$br5;
