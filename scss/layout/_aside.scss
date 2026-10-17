@@ -38,6 +38,7 @@
     padding: 10px 14px;
     width: 100%;
     border: 1px solid v.$black;
+    font-weight: v.$font500;
 
     @media(width <=v.$bp650) {
       width: 100%;
@@ -54,7 +55,7 @@
   &__folder {
     &-title {
       margin-bottom: 10px;
-      font-weight: v.$font400;
+      font-weight: v.$font700;
       font-size: 16px;
     }
 
@@ -91,7 +92,7 @@
 
     &-title {
       font-size: 28px;
-      font-weight: v.$font400;
+      font-weight: v.$font700;
       align-self: center;
       margin-bottom: 12px;
 

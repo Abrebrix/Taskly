@@ -97,6 +97,8 @@
 
   &__create-btn {
     @include m.padding-9-11;
+    font-weight: v.$font700;
+    font-size: 14px;
     border-radius: v.$br10;
     color: v.$white;
 
