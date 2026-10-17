@@ -1,4 +1,4 @@
-import { notes, hasNotes } from '../shared/state.js';
+import {hasNotes, getNotes, setNotes } from '../shared/state.js';
 
 let saveFlagTimer = null;
 
@@ -67,17 +67,26 @@ function clearDomNotes() {
 
 function renderNote(noteData) {
   const note = document.createElement('li');
-  const itemWrapper = document.createElement('div');
+  const itemWrapperText = document.createElement('div');
+  const itemWrapperBtn = document.createElement('div');
   const noteName = document.createElement('span');
   const noteText = document.createElement('span');
-  const noteBtn = document.createElement('button'); // на потом когда добавишь удаление заметок
+  const noteBtnDel = document.createElement('button');
+  const noteBtnEdit = document.createElement('button');
+  const imgEdit = document.createElement('img');
+  const imgDel = document.createElement('img');
+
+  imgEdit.src = '../../img/pencil-icon.svg';
+  imgDel.src = '../../img/cross-icon.svg';
 
   note.classList.add('aside__note-item');
   note.classList.add('note-list__item');
-  itemWrapper.classList.add('note-list__item-wrapper');
+  itemWrapperText.classList.add('note-list__item-wrapper--text');
+  itemWrapperBtn.classList.add('note-list__item-wrapper--btn');
   noteName.classList.add('note-list__item-name');
   noteText.classList.add('note-list__item-text');
-  noteBtn.classList.add('note-list__item-btn');
+  noteBtnDel.classList.add('note-list__item-btn--del');
+  noteBtnEdit.classList.add('note-list__item-btn--edit');
 
   note.dataset.id = noteData.id;
   noteName.textContent = noteData.name;
@@ -85,10 +94,14 @@ function renderNote(noteData) {
 
   noteName.dataset.note = 'name';
   noteText.dataset.note = 'text';
-  noteBtn.dataset.note = 'btn';
+  noteBtnDel.dataset.note = 'btn-del';
+  noteBtnEdit.dataset.note = 'btn-edit';
 
-  itemWrapper.append(noteName, noteText);
-  note.append(itemWrapper, noteBtn);
+  noteBtnEdit.append(imgEdit);
+  noteBtnDel.append(imgDel);
+  itemWrapperBtn.append(noteBtnEdit, noteBtnDel);
+  itemWrapperText.append(noteName, noteText);
+  note.append(itemWrapperText, itemWrapperBtn);
 
   return note;
 }
@@ -99,8 +112,9 @@ function showNotes() {
   clearDomNotes();
 
   if (hasNotes()) {
-    for (let i = 0; i < notes.length; i++) {
-      noteList.append(renderNote(notes[i]));
+    const currentNote = getNotes();
+    for (let i = 0; i < currentNote.length; i++) {
+      noteList.append(renderNote(currentNote[i]));
     }
   } else {
     const noteListFlag = document.querySelector('[data-note="flag"]');
@@ -139,8 +153,9 @@ function saveNote() {
         text: noteText.value,
       };
 
-      notes.push(note);
-      localStorage.setItem('notes', JSON.stringify(notes));
+      const currentNote = getNotes();
+      currentNote.unshift(note);
+      setNotes(currentNote);
 
       showNoteSaveFlag();
       clearInput();
@@ -153,7 +168,20 @@ function saveNote() {
 
 
 function delNote() {
+  const noteList = document.querySelector('[data-note="list"]');
 
+  noteList.addEventListener('click', (e) => {
+    if (e.target.closest('[data-note="btn-del"]')) {
+      const note = e.target.closest('.note-list__item');
+      const noteId = Number(note.dataset.id);
+
+      let currentNotes = getNotes();
+      currentNotes = currentNotes.filter(n => n.id !== noteId);
+      setNotes(currentNotes);
+
+      showNotes();
+    }
+  });
 }
 
 
@@ -162,4 +190,7 @@ export function app() {
   hideWorkspace();
   saveNote();
   showNotes();
+  delNote();
 }
+
+// Удалить notes и заменить на getNotes
