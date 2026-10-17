@@ -1,69 +1,61 @@
-import {hasNotes, getNotes, setNotes } from '../shared/state.js';
+import { hasNotes, getNotes, setNotes } from '../shared/state.js';
 
+// 1. ПЕРЕМЕННЫЕ
 let saveFlagTimer = null;
+
+
+// ФУНКЦИИ
+function noteNotEmpty() {
+  const noteName = document.querySelector('[data-note="input-name"]');
+  const noteText = document.querySelector('[data-note="textarea"]');
+  return noteName.value.trim() !== '' && noteText.value.trim() !== '';
+}
+
+function clearInput() {
+  const noteName = document.querySelector('[data-note="input-name"]');
+  const noteText = document.querySelector('[data-note="textarea"]');
+  noteName.value = '';
+  noteText.value = '';
+}
+
+function showWorkspace() {
+  document.querySelector('[data-note="form"]').classList.remove('note__form--hidden');
+}
+
+function hideWorkspace() {
+  document.querySelector('[data-note="form"]').classList.add('note__form--hidden');
+}
 
 function showNoteSaveFlag() {
   const noteSaveFlag = document.querySelector('[data-note-save="flag"]');
   const isNotEmpty = noteNotEmpty();
 
-  // Отменяем предыдущий таймер, если он есть
   if (saveFlagTimer) {
     clearTimeout(saveFlagTimer);
     saveFlagTimer = null;
   }
 
-  // 1. Показать флаг
   noteSaveFlag.classList.remove('note__flag--hidden');
   noteSaveFlag.classList.toggle('note__flag--true', isNotEmpty);
   noteSaveFlag.classList.toggle('note__flag--false', !isNotEmpty);
   noteSaveFlag.textContent = isNotEmpty ? 'Сохранено' : 'Не сохранено';
 
-  // 2. Через 2.5 сек — плавно скрыть
   saveFlagTimer = setTimeout(() => {
     noteSaveFlag.classList.add('note__flag--hidden');
-
-    // Через 0.5 сек (после transition) — очистить
     setTimeout(() => {
       noteSaveFlag.textContent = '';
       noteSaveFlag.classList.remove('note__flag--true', 'note__flag--false');
     }, 500);
-
     saveFlagTimer = null;
   }, 2000);
 }
 
-
-function showWorkspace() {
-  const addNoteBtn = document.querySelector('[data-action="add-note"]');
-
-  addNoteBtn.addEventListener('click', () => {
-    const noteForm = document.querySelector('[data-note="form"]');
-
-    noteForm.classList.remove('note__form--hidden');
-    editHeightNoteForm(true);
-  });
-}
-
-
-function hideWorkspace() {
-  const cancleNoteBtn = document.querySelector('[data-action="cancle-note"]');
-  cancleNoteBtn.addEventListener('click', () => {
-    const workspace = document.querySelector('[data-note="form"]');
-
-    workspace.classList.add('note__form--hidden');
-    editHeightNoteForm(false);
-  })
-}
-
-
 function clearDomNotes() {
   const noteList = document.querySelector('[data-note="list"]');
   const noteFlag = document.querySelector('[data-note="flag"]');
-
   noteList.innerHTML = '';
   noteFlag.textContent = '';
 }
-
 
 function renderNote(noteData) {
   const note = document.createElement('li');
@@ -79,8 +71,7 @@ function renderNote(noteData) {
   imgEdit.src = '../../img/pencil-icon.svg';
   imgDel.src = '../../img/cross-icon.svg';
 
-  note.classList.add('aside__note-item');
-  note.classList.add('note-list__item');
+  note.classList.add('aside__note-item', 'note-list__item');
   itemWrapperText.classList.add('note-list__item-wrapper--text');
   itemWrapperBtn.classList.add('note-list__item-wrapper--btn');
   noteName.classList.add('note-list__item-name');
@@ -106,7 +97,6 @@ function renderNote(noteData) {
   return note;
 }
 
-
 function showNotes() {
   const noteList = document.querySelector('[data-note="list"]');
   clearDomNotes();
@@ -117,28 +107,19 @@ function showNotes() {
       noteList.append(renderNote(currentNote[i]));
     }
   } else {
-    const noteListFlag = document.querySelector('[data-note="flag"]');
-    noteListFlag.textContent = 'Нет заметок';
+    document.querySelector('[data-note="flag"]').textContent = 'Нет заметок';
   }
 }
 
-
-function noteNotEmpty() {
-  const noteName = document.querySelector('[data-note="input-name"]');
-  const noteText = document.querySelector('[data-note="textarea"]');
-
-  return noteName.value.trim() !== '' && noteText.value.trim() !== '';
+function addNote() {
+  document.querySelector('[data-action="add-note"]').addEventListener('click', showWorkspace);
 }
 
-
-function clearInput() {
-  const noteName = document.querySelector('[data-note="input-name"]');
-  const noteText = document.querySelector('[data-note="textarea"]');
-
-  noteName.value = '';
-  noteText.value = '';
+function cancelNote() {
+  document.querySelector('[data-action="cancle-note"]').addEventListener('click', () => {
+    hideWorkspace();
+  });
 }
-
 
 function saveNote() {
   const saveNoteBtn = document.querySelector('[data-action="save-note"]');
@@ -163,9 +144,8 @@ function saveNote() {
     } else {
       showNoteSaveFlag();
     }
-  })
+  });
 }
-
 
 function delNote() {
   const noteList = document.querySelector('[data-note="list"]');
@@ -186,11 +166,9 @@ function delNote() {
 
 
 export function app() {
-  showWorkspace();
-  hideWorkspace();
+  addNote();
+  cancelNote();
   saveNote();
-  showNotes();
   delNote();
+  showNotes();
 }
-
-// Удалить notes и заменить на getNotes
