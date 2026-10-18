@@ -2,6 +2,8 @@ import { hasNotes, getNotes, setNotes } from '../shared/state.js';
 
 // 1. ПЕРЕМЕННЫЕ
 let saveFlagTimer = null;
+let noteIsEdited = false;
+let currentEditingId = null;
 
 
 // ФУНКЦИИ
@@ -97,7 +99,14 @@ function renderNote(noteData) {
   return note;
 }
 
-function showNotes() {
+
+function searchNote(id) {
+  const notes = getNotes();
+  return notes.find(note => note.id === Number(id));
+}
+
+
+function showNotes() { //обновляет dom список заметок
   const noteList = document.querySelector('[data-note="list"]');
   clearDomNotes();
 
@@ -111,38 +120,56 @@ function showNotes() {
   }
 }
 
-function addNote() {
+function addNote() { // отслеживает кнопку <<добавить заметку>>
   document.querySelector('[data-action="add-note"]').addEventListener('click', showWorkspace);
 }
 
-function cancelNote() {
+function cancelNote() { // скрывает поле заполнения заметки
   document.querySelector('[data-action="cancle-note"]').addEventListener('click', () => {
+    noteIsEdited = false;
+    currentEditingId = null;
+
     hideWorkspace();
   });
 }
 
+// если заметка создается - добовляет ее,
+// если редактируется - изменяет ее
 function saveNote() {
   const saveNoteBtn = document.querySelector('[data-action="save-note"]');
   const noteName = document.querySelector('[data-note="input-name"]');
   const noteText = document.querySelector('[data-note="textarea"]');
+  let currentNotes = getNotes();
 
   saveNoteBtn.addEventListener('click', () => {
-    if (noteNotEmpty()) {
+    if (noteNotEmpty() && !noteIsEdited) {
       const note = {
         id: Date.now(),
         name: noteName.value,
         text: noteText.value,
       };
 
-      const currentNote = getNotes();
-      currentNote.unshift(note);
-      setNotes(currentNote);
+      currentNotes = getNotes();
+      currentNotes.unshift(note);
+      setNotes(currentNotes);
 
       showNoteSaveFlag();
       clearInput();
       showNotes();
-    } else {
-      showNoteSaveFlag();
+    } else if (noteNotEmpty() && noteIsEdited) {
+      noteIsEdited = false;
+      const index = currentNotes.findIndex(n => n.id === currentEditingId);
+
+      if (index !== -1) {
+
+        currentNotes[index].name = noteName.value;
+        currentNotes[index].text = noteText.value;
+
+        setNotes(currentNotes);
+
+        showNotes();
+        showNoteSaveFlag();
+      }
     }
   });
 }
@@ -164,11 +191,36 @@ function delNote() {
   });
 }
 
+// открывает окно для редактирования
+//  и вносит туда имеющийся текст
+function editNote() {
+  const noteList = document.querySelector('[data-note="list"]');
+
+  noteList.addEventListener('click', (e) => {
+    if (e.target.closest('[data-note="btn-edit"]')) {
+      const noteNameInput = document.querySelector('[data-note="input-name"]');
+      const noteTextInput = document.querySelector('[data-note="textarea"]');
+
+      const noteId = e.target.closest('.note-list__item').dataset.id;
+      const note = searchNote(noteId);
+
+      noteNameInput.value = note.name;
+      noteTextInput.value = note.text;
+
+      noteIsEdited = true;
+      currentEditingId = Number(noteId);
+
+      showWorkspace();
+    }
+  });
+}
+
 
 export function app() {
+  showNotes();
   addNote();
   cancelNote();
   saveNote();
   delNote();
-  showNotes();
+  editNote();
 }
