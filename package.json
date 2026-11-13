@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build:scss": "sass ./src/scss/main.scss:./build/css/main.css",
+    "watch:scss": "sass --watch ./src/scss/main.scss:./build/css/main.css",
+    "build:ts": "tsc",
+    "watch:ts": "tsc --watch",
+    "build": "npm run build:scss && tsc",
+    "watch": "concurrently \"npm run watch:scss\" \"npm run watch:ts\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "sass": "^1.108.1",
+    "typescript": "^7.0.2"
+  }
+}

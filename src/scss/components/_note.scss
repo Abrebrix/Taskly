@@ -41,6 +41,7 @@
     display: flex;
     gap: 5px;
     flex: 1;
+    min-width: 0;
     flex-direction: column;
     justify-content: space-between;
 
@@ -89,6 +90,8 @@
   &__active {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 auto;
     gap: 5px;
     margin-top: auto;
   }
@@ -97,6 +100,9 @@
 
   &__create-btn {
     @include m.padding-9-11;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    white-space: nowrap;
     font-weight: v.$font700;
     font-size: 14px;
     border-radius: v.$br10;
